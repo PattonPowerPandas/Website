@@ -55,3 +55,10 @@ def aboutlab(request,labid):
         template=loader.get_template('FLLapp/aboutcenter.html')
         context={'lab':Lab.objects.get(pk=labid)}
         return HttpResponse(template.render(context),request)
+def animal(request,animalid):
+        template.loader.get_template('FLLapp/animal.html')
+        animal=:Animals.objects.get(pk=animalid)
+        context={'animal':animal,
+            gender:['Male','Female','Unknown'],
+            kind:['rodent','dog','cat','primate','other'][animal.species],
+            domestic:['Yes','No'][animal.domestic]}
