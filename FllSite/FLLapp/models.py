@@ -26,7 +26,7 @@ class Center(models.Model):
 class Animal(models.Model):
         name=models.CharField(max_length=20,default="unknown")
         gender=models.PositiveSmallIntegerField(default=2)#0=boy 1=girl 2=unknown
-        species=models.PositiveSmallIntegerField(default=4)#rodent,dog/cat,primate,other
+        species=models.PositiveSmallIntegerField(default=5)#rodent,dog,cat,primate,other
         domestic=models.BooleanField(default=False)
         lab=models.ForeignKey(Lab,on_delete=models.CASCADE)
         def __str__(self):
