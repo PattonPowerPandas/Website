@@ -2,6 +2,7 @@
 <link href="{% static "FLLapp/aboutlab.css" %}" rel="stylesheet" type="text/css">
 <p>{{lab.name}}</p>
 <p>{{lab.state}}</p>
+<p>Animals:</p>
 {% for animal in {{lab.animal_set}} %}
-  <p>animal.name</p>
+  <p>  animal.name</p>
 {% endfor %}
