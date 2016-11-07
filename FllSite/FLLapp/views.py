@@ -51,3 +51,6 @@ def searchresults(request):
         for a in range((6-len(newcenters[-1]))):
                 newcenters[-1].append(['empty','',False])
         return HttpResponse(template.render({'results':newcenters,'empty':len(centers)==0},request))
+def aboutlab(request,labid):
+        template=loader.get_template('FLLapp/aboutcenter.html')
+        context={}
