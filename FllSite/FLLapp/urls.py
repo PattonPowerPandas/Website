@@ -7,6 +7,7 @@ urlpatterns=[
         url(r'^searchresults',views.searchresults,name="searchresults"),
         url(r'^search$',views.search,name='search'),
         url(r'^aboutlab(?P<labid>[0-9]+)/',views.aboutlab,name="aboutlab"),
-        url(r'^animal(?P<animalid>[0-9]+)/',views.animal,name="animal")
+        url(r'^animal(?P<animalid>[0-9]+)/',views.animal,name="animal"),
+        url(r'^animalsearch/',views.animalsearch,name="animalsearch"),
 ]
 
