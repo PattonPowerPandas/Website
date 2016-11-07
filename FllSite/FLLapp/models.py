@@ -18,5 +18,13 @@ class Animal(models.Model):
         gender=models.PositiveSmallIntegerField(default=2)#0=boy 1=girl 2=unknown
         species=models.PositiveSmallIntegerField(default=4)#rodent,dog/cat,primate,other
         domestic=models.BooleanField(default=False)
+        lab=modles.ForiegnKey(Lab,on_delete=models.CASCADE)
         def __str__(self):
                 return ['','Domestic '][self.domestic]+['Male ','Female ',''][self.gender]+['rodent','dog/cat','primate', 'other'][self.species]
+class Lab(models.Model):
+        name=models.CharField(max_length=50,default="unnamed lab")
+        state=models.CharField(max_length=2,default="PA")
+        phone=models.CharField(max_length=12,default='Unknown')
+        desc=models.TextField(default="No description provided")
+        site=models.CharField(max_length=30,default="no website")
+        siteurl=models.CharField(max_length=70,default="#")
