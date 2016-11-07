@@ -1,6 +1,6 @@
 s{% load static %}
 <link href="{% static 'FLLapp/animalsearch.css' %}">
-<form>
+<form action="{% url 'FLLapp:animalsearchresults' %}">
   What state can you pick the animal up from?
   <select name="state">
     {% for state in states %}
