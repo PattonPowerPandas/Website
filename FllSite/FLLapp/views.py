@@ -18,7 +18,8 @@ def aboutcenter(request,centerid):
                  'animals':
                  'Rodents: '+['No','Yes'][center.acceptsrodents]+'\n'+
                  'Dogs/cats: '+['No','Yes'][center.acceptsrodents]+'\n'+
-                 'Primates: '+['No','Yes'][center.acceptsrodents]+'\n'}
+                 'Primates: '+['No','Yes'][center.acceptsrodents]+'\n',
+                  'state':cetner.state}
         template=loader.get_template('FLLapp/aboutcenter.html')
         return HttpResponse(template.render(context,request))
 def search(request):
