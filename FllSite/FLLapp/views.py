@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Center
+from .models import Center,Animal,Lab
 # Create your views here.
 def index(request):
         template=loader.get_template('FLLapp/index.html')
@@ -19,7 +19,7 @@ def aboutcenter(request,centerid):
                  'Rodents: '+['No','Yes'][center.acceptsrodents]+'\n'+
                  'Dogs/cats: '+['No','Yes'][center.acceptsrodents]+'\n'+
                  'Primates: '+['No','Yes'][center.acceptsrodents]+'\n',
-                  'state':cetner.state}
+                  'state':center.state}
         template=loader.get_template('FLLapp/aboutcenter.html')
         return HttpResponse(template.render(context,request))
 def search(request):
@@ -53,4 +53,5 @@ def searchresults(request):
         return HttpResponse(template.render({'results':newcenters,'empty':len(centers)==0},request))
 def aboutlab(request,labid):
         template=loader.get_template('FLLapp/aboutcenter.html')
-        context={}
+        context={'lab':Lab.objects.get(pk=labid)}
+        return HttpResponse(template.render(context),request)
