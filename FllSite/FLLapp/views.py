@@ -61,4 +61,5 @@ def animal(request,animalid):
         context={'animal':animal,
             gender:['Male','Female','Unknown'],
             kind:['rodent','dog','cat','primate','other'][animal.species],
-            domestic:['Yes','No'][animal.domestic]}
+            domestic:['No','Yes'][animal.domestic],
+            adopted:['No','Yes'][animal.adopted],}
