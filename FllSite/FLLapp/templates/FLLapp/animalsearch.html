@@ -1,4 +1,18 @@
 s{% load static %}
 <link href="{% static 'FLLapp/animalsearch.css' %}">
 <form>
+  What state can you pick the animal up from?
+  <select name="state">
+    {% for state in states %}
+      <option value={{state}}>{{state}}</option>
+    {% endfor %}
+  </select>
+  What type of animal should it be?
+  <input type="radio" name="kind" value=0 checked> Rodent<br>
+  <input type="radio" name="kind" value=1> Dog<br>
+  <input type="radio" name="kind" value=2> Cat<br>
+  <input type="radio" name="kind" value=3> Primate<br>
+  <input type="radio" name="kind" value=4> Bird<br>
+  <input type="radio" name="kind" value=5> Other/Any
+  <input type="submit">
 </form>
