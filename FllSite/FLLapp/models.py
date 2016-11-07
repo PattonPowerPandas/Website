@@ -14,7 +14,7 @@ class Center(models.Model):
         siteurl=models.CharField(max_length=70,default="#")
         def __str__(self):
                 return self.name
-        class Lab(models.Model):
+class Lab(models.Model):
         name=models.CharField(max_length=50,default="unnamed lab")
         state=models.CharField(max_length=2,default="PA")
         phone=models.CharField(max_length=12,default='Unknown')
