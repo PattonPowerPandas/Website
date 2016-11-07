@@ -28,6 +28,6 @@ class Animal(models.Model):
         gender=models.PositiveSmallIntegerField(default=2)#0=boy 1=girl 2=unknown
         species=models.PositiveSmallIntegerField(default=5)#rodent,dog,cat,primate,other
         domestic=models.BooleanField(default=False)
-        lab=models.ForeignKey(Lab,on_delete=models.CASCADE)
+        center=models.ForeignKey(Center,on_delete=models.CASCADE)
         def __str__(self):
                 return ['','Domestic '][self.domestic]+['Male ','Female ',''][self.gender]+['rodent','dog/cat','primate', 'other'][self.species]
