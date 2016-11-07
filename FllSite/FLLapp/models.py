@@ -29,5 +29,6 @@ class Animal(models.Model):
         species=models.PositiveSmallIntegerField(default=5)#rodent,dog,cat,primate,bird,other
         domestic=models.BooleanField(default=False)
         center=models.ForeignKey(Center,on_delete=models.CASCADE)
+        adopted=models.BooleanField(default=False)
         def __str__(self):
                 return ['','Domestic '][self.domestic]+['Male ','Female ',''][self.gender]+['rodent','dog/cat','primate', 'other'][self.species]
