@@ -6,6 +6,6 @@ urlpatterns=[
         url(r'^aboutcenter(?P<centerid>[0-9]+)/',views.aboutcenter,name="aboutcenter"),
         url(r'^searchresults',views.searchresults,name="searchresults"),
         url(r'^search$',views.search,name='search'),
-        
+        url(r'^aboutlab(?P<labid>[0-9]+)/',views.aboutlab,name="aboutcenter")
 ]
 
