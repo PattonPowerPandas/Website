@@ -63,3 +63,7 @@ def animal(request,animalid):
             kind:['rodent','dog','cat','primate','other'][animal.species],
             domestic:['No','Yes'][animal.domestic],
             adopted:['No','Yes'][animal.adopted],}
+        return HttpResponse(template.render(context),request)
+def animalsearch(request):
+        template=loader.get_template('Fllapp/animalsearch.html')
+        return HttpResponse(template.render({}),request)
