@@ -1,0 +1,22 @@
+body {
+  Background-color: #4d8cc6;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#menu {
+	text-align: center;
+}
+#menu li {
+  display: inline;
+  margin-right: 3em;
+}
+#title {
+  text-align: center;
+  font-size: 30px;
+}
+#desc {
+	text-align: center;
+	font-size: 18px;
+}

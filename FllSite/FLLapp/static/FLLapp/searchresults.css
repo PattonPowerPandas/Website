@@ -1,0 +1,13 @@
+#results .resultsrow td {
+	padding-left: 9px;
+	padding-right: 9px;
+	padding-bottom: 30px;
+        width: 150px;
+        height: 100px
+}
+.full {
+  background-color: #99F;
+}
+.empty {
+  background-color: #DDF;
+}

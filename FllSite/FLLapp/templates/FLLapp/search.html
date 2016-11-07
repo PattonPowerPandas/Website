@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'FLLapp/search.css' %}">
+<form action="{% url 'FLLapp:searchresults' %}">
+  What state should the center be in?<br>
+  <select name="state">
+    {% for state in states %}
+      <option value={{state}}>{{state}}</option>
+    {% endfor %}
+  </select>
+  <br>
+  <input type="checkbox" name="acc1" value="1">Does it need to accept rodents?<br>
+  <input type="checkbox" name="acc2" value="1">Does it need to accept dogs/cats?<br>
+  <input type="checkbox" name="acc3" value="1">Does it need to accept primates?<br>
+<input type="checkbox" name="acc3" value="1">Does it need to accept birds?<br>
+  <input type="submit" value="Submit">
+</form>

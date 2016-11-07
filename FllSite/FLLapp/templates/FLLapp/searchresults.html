@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'FLLapp/searchresults.css' %}">
+{% if empty %}<p>No rehab centers with your specifications were found. Try broadening your search terms</p>{% endif %}
+<table id="results">
+  {% for row in results %}
+  <tr class="resultsrow">
+    {% for result in row %}
+      <td class="{{result.0}}"><a {% if result.2%}href="/aboutcenter{{result.2}}"{% endif %}>{{result.1}}</a></td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
