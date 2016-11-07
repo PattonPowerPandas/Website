@@ -4,5 +4,5 @@
 <p>{{lab.state}}</p>
 <p>Animals:</p>
 {% for animal in {{lab.animal_set}} %}
-  <p>  animal.name</p>
+  <a href="/animal{{animal.id}}">animal.name</a>
 {% endfor %}
