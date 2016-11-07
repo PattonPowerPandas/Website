@@ -9,5 +9,6 @@ urlpatterns=[
         url(r'^aboutlab(?P<labid>[0-9]+)/',views.aboutlab,name="aboutlab"),
         url(r'^animal(?P<animalid>[0-9]+)/',views.animal,name="animal"),
         url(r'^animalsearch/',views.animalsearch,name="animalsearch"),
+        url(r'^animalsearchresults/',views.animalsearchresults,name="animalsearchresults"),
 ]
 
