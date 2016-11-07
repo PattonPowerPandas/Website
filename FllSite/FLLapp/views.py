@@ -67,3 +67,15 @@ def animal(request,animalid):
 def animalsearch(request):
         template=loader.get_template('Fllapp/animalsearch.html')
         return HttpResponse(template.render({}),request)
+def animalsearchresults(request):
+        template=loader.get_template('FLLapp/animalsearchresults.html')
+        params=request.GET
+        animals=Animal.objects.all().filter(state=params['state'],species=params['kind'])
+        newanimals=[[]]
+        for a in animals:
+                if len(newanimals[-1])==6:
+                        newanimals.append([])
+                newanimals[-1].append(['full',a.name,a.id])
+        for a in range((6-len(newanimals[-1]))):
+                newcenters[-1].append(['empty','',False])
+        return HttpResponse(template.render({'results':newanimals,'empty':len(animals)==0},request))
