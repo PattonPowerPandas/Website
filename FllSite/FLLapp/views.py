@@ -57,7 +57,7 @@ def aboutlab(request,labid):
         return HttpResponse(template.render(context),request)
 def animal(request,animalid):
         template.loader.get_template('FLLapp/animal.html')
-        animal=:Animals.objects.get(pk=animalid)
+        animal=Animals.objects.get(pk=animalid)
         context={'animal':animal,
             gender:['Male','Female','Unknown'],
             kind:['rodent','dog','cat','primate','other'][animal.species],
