@@ -68,14 +68,14 @@ def animalsearch(request):
         template=loader.get_template('Fllapp/animalsearch.html')
         states=[]
         for a in Animal.objects.all():
-                if a.state not in states:
+                if a.center.state not in states:
                         states.append(a.state)
         context={'states':sorted(states)}
         return HttpResponse(template.render({}),request)
 def animalsearchresults(request):
         template=loader.get_template('FLLapp/animalsearchresults.html')
         params=request.GET
-        animals=Animal.objects.all().filter(state=params['state'],species=params['kind'])
+        animals=Animal.objects.all().filter(center__state=params['state'],species=params['kind'])
         newanimals=[[]]
         for a in animals:
                 if len(newanimals[-1])==6:
