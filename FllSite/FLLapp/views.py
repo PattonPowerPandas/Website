@@ -66,6 +66,11 @@ def animal(request,animalid):
         return HttpResponse(template.render(context),request)
 def animalsearch(request):
         template=loader.get_template('Fllapp/animalsearch.html')
+        states=[]
+        for a in Animal.objects.all():
+                if a.state not in states:
+                        states.append(a.state)
+        context={'states':sorted(states)}
         return HttpResponse(template.render({}),request)
 def animalsearchresults(request):
         template=loader.get_template('FLLapp/animalsearchresults.html')
