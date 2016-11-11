@@ -85,3 +85,5 @@ def animalsearchresults(request):
         for a in range((6-len(newanimals[-1]))):
                 newcenters[-1].append(['empty','',False])
         return HttpResponse(template.render({'results':newanimals,'empty':len(animals)==0},request))
+def about(request):
+        template=loader.get_template('FLLapp/about.html')
