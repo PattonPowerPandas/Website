@@ -30,5 +30,6 @@ class Animal(models.Model):
         domestic=models.BooleanField(default=False)
         center=models.ForeignKey(Center,on_delete=models.CASCADE)
         adopted=models.BooleanField(default=False)
+        injured=models.BooleanField(default=True)
         def __str__(self):
                 return ['','Domestic '][self.domestic]+['Male ','Female ',''][self.gender]+['rodent','dog/cat','primate', 'other'][self.species]
