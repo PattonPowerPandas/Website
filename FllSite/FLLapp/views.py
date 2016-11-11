@@ -17,8 +17,9 @@ def aboutcenter(request,centerid):
                  'site':center.site,
                  'animals':
                  'Rodents: '+['No','Yes'][center.acceptsrodents]+'\n'+
-                 'Dogs/cats: '+['No','Yes'][center.acceptsrodents]+'\n'+
-                 'Primates: '+['No','Yes'][center.acceptsrodents]+'\n',
+                 'Dogs/cats: '+['No','Yes'][center.acceptsdogscats]+'\n'+
+                 'Primates: '+['No','Yes'][center.acceptsprimates]+'\n'+
+                 'Birds: '+['No','Yes'][center.acceptsbirds]+'\n',
                   'state':center.state}
         template=loader.get_template('FLLapp/aboutcenter.html')
         return HttpResponse(template.render(context,request))
