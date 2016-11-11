@@ -84,6 +84,16 @@ def animalsearchresults(request):
                 newanimals[-1].append(['full',a.name,a.id])
         for a in range((6-len(newanimals[-1]))):
                 newcenters[-1].append(['empty','',False])
-        return HttpResponse(template.render({'results':newanimals,'empty':len(animals)==0},request))
+        return HttpResponse(template.render({}),request)
 def about(request):
         template=loader.get_template('FLLapp/about.html')
+        return HttpResponse(template.render({}),request)
+def donate(request):
+        template=loader.get_template('FLLapp/donate.html')
+        return HttpResponse(template.render({}),request)
+def contact(request):
+        template=loader.get_template('FLLapp/contact.html')
+        return HttpResponse(template.render({}),request)
+def laws(request):
+        template=loader.get_template('FLLapp/laws.html')
+        return HttpResponse(template.render({}),request)
