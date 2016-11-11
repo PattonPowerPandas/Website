@@ -75,7 +75,7 @@ def animalsearch(request):
 def animalsearchresults(request):
         template=loader.get_template('FLLapp/animalsearchresults.html')
         params=request.GET
-        animals=Animal.objects.all().filter(center__state=params['state'],species=params['kind'])
+        animals=Animal.objects.all().filter(center__state=params['state'],species=params['kind'],injured=params['injured'])
         newanimals=[[]]
         for a in animals:
                 if len(newanimals[-1])==6:
