@@ -11,5 +11,8 @@ urlpatterns=[
         url(r'^animalsearch/',views.animalsearch,name="animalsearch"),
         url(r'^animalsearchresults/',views.animalsearchresults,name="animalsearchresults"),
         url(r'^about/',views.about,name="about"),
+        url(r'^contact/',views.contact,name="contact"),
+        url(r'^donate/',views.donate,name="donate"),
+        url(r'^laws/',views.laws,name="laws"),
 ]
 
